@@ -1,22 +1,10 @@
-<?php
-    include_once ("./base.html.twig")
-?>
+{% extends "base.html.twig" %}
 
-<ul class="nav">
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Pizza's</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
-    </li>
-</ul>
-
+{% block body %}
 <h1>Pizzaria MK</h1>
 {%  for value in pizzas %}
 <li>{{ value }}</li>
 {% endfor %}
 <p>{{ name }}</p>
+{% endblock%}
 
