@@ -38,22 +38,18 @@ class PizzaController extends AbstractController
      */
     public function menu(): Response
     {
-        $pizzas = ["Kip2", "Hawaii", "Margarita3", "Kebab4", "Veggie5"];
-        return $this->render('Pizza/menu.html.twig', [
-            'pizzas' => $pizzas,
-        ]);
+        return $this->render('Pizza/menu.html.twig', []);
 
 
     }
+
 
     /**
      * @Route("/contact")
      */
     public function contact(): Response
     {
-        $pizzas = ["Kip2", "Hawaii", "Margarita3", "Kebab4", "Veggie5"];
         return $this->render('Pizza/contact.html.twig', [
-            'pizzas' => $pizzas,
         ]);
 
 

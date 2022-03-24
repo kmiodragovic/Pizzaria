@@ -1,5 +1,6 @@
 {% extends "base.html.twig" %}
 {% block title %} menu {% endblock %}
+
 {% block body %}
 
 <body>
@@ -32,6 +33,21 @@
             <a class="nav-link" href="contact">Contact</a>
         </li>
     </ul>
+</div>
+
+<div class="row gy-3">
+    {%  for choice in pizzas %}
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="img/{{ choice }}.jpg" class="card-img-top" alt="{{ choice }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ choice }}</h5>
+                    <p class="card-text">{{ choice }}</p>
+                    <a href="menu" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
 </div>
 
 </body>
