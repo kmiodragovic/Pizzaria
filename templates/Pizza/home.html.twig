@@ -1,10 +1,37 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-<h1>Pizzaria MK</h1>
-{%  for value in pizzas %}
-<li>{{ value }}</li>
-{% endfor %}
-<p>{{ name }}</p>
+
+{#<h1>Pizzaria MK</h1>#}
+{#{%  for value in pizzas %}#}
+{#<li>{{ value }}</li>#}
+{#{% endfor %}#}
+{#<p>{{ name }}</p>#}
+
+
+
+
+<div class="row gy-3">
+    {%  for value in pizzas %}
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="#" class="card-img-top" alt="{{ value }}">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+
+
+
 {% endblock%}
+
+
+
 

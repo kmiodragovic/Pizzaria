@@ -16,22 +16,34 @@
     {% endblock %}
 </head>
 <body>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Pizzaria MK</h1>
+        <p class="lead">De lekkerste, de beste en de goedkoopste.</p>
+    </div>
+</div>
+
+
 <div class="container">
     <ul class="nav">
         <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="menu">Pizza's</a>
+            <a class="nav-link active" aria-current="page" href="menu">Pizza's</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="contact">Contact</a>
+            <a class="nav-link" href="contact">Contact</a>
         </li>
     </ul>
 </div>
+
+<div class="container">
+    <p>Test</p>
+</div>
 {% block body %}{% endblock %}
 
-<p>Test</p>
 
 </body>
 </html>

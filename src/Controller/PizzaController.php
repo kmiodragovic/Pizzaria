@@ -13,13 +13,41 @@ class PizzaController extends AbstractController
      */
     public function homepage(): Response
     {
-        $pizzas = ["Kip", "Hawai", "Margarita", "Kebab", "Veggie"];
+        $pizzas = ["Meat", "Vegan", "Fish"];
         return $this->render('Pizza/home.html.twig', [
             'pizzas' => $pizzas,
             'name' => "Kristian",
         ]);
 
         
+    }
+
+    /**
+     * @Route("/menu")
+     */
+    public function menu(): Response
+    {
+        $pizzas = ["Kip2", "Hawai1", "Margarita3", "Kebab4", "Veggie5"];
+        return $this->render('Pizza/menu.html.twig', [
+            'pizzas' => $pizzas,
+            'name' => "Jan",
+        ]);
+
+
+    }
+
+    /**
+     * @Route("/contact")
+     */
+    public function contact(): Response
+    {
+        $pizzas = ["Kip2", "Hawai1", "Margarita3", "Kebab4", "Veggie5"];
+        return $this->render('Pizza/contact.html.twig', [
+            'pizzas' => $pizzas,
+            'name' => "Jan",
+        ]);
+
+
     }
 }
 
