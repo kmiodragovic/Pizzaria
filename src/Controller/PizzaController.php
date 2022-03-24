@@ -13,13 +13,24 @@ class PizzaController extends AbstractController
      */
     public function homepage(): Response
     {
-        $pizzas = ["Meat", "Vegan", "Fish"];
+        $pizza = ["Meat", "Vegan", "Fish"];
         return $this->render('Pizza/home.html.twig', [
-            'pizzas' => $pizzas,
-            'name' => "Kristian",
+            'pizza' => $pizza
         ]);
 
         
+    }
+
+    public function pizza($pizza): Response
+    {
+        $choice = [
+            "Meat" => ['pepperoni'],
+            "Vegan" => ['margherita'],
+            "Fish" => ['tonno'],
+        ];
+        return $this->render('Pizza/menu.html.twig', [
+            'pizza' => $pizza
+        ]);
     }
 
     /**
@@ -27,10 +38,9 @@ class PizzaController extends AbstractController
      */
     public function menu(): Response
     {
-        $pizzas = ["Kip2", "Hawai1", "Margarita3", "Kebab4", "Veggie5"];
+        $pizzas = ["Kip2", "Hawaii", "Margarita3", "Kebab4", "Veggie5"];
         return $this->render('Pizza/menu.html.twig', [
             'pizzas' => $pizzas,
-            'name' => "Jan",
         ]);
 
 
@@ -41,10 +51,9 @@ class PizzaController extends AbstractController
      */
     public function contact(): Response
     {
-        $pizzas = ["Kip2", "Hawai1", "Margarita3", "Kebab4", "Veggie5"];
+        $pizzas = ["Kip2", "Hawaii", "Margarita3", "Kebab4", "Veggie5"];
         return $this->render('Pizza/contact.html.twig', [
             'pizzas' => $pizzas,
-            'name' => "Jan",
         ]);
 
 
