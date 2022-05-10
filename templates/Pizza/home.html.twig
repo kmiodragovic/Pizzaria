@@ -26,13 +26,13 @@
     <div class="container">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <a class="nav-link active text-white bg-dark" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="menu">Pizza's</a>
+                <a class="nav-link text-white bg-dark" href="menu">Pizza's</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="contact">Contact</a>
+                <a class="nav-link text-white bg-dark" href="contact">Contact</a>
             </li>
         </ul>
 
@@ -45,25 +45,21 @@
             <div class="mySlides fade">
                 <div class="">1 / 3</div>
                 <img src="img/carousel1.jpg" style="width:100%">
-                <div class="text">Caption Text</div>
             </div>
 
             <div class="mySlides fade">
                 <div class=>2 / 3</div>
                 <img src="img/caro2.jpg" style="width:100%">
-                <div class="text">Caption Two</div>
             </div>
 
             <div class="mySlides fade">
                 <div class=>3 / 3</div>
                 <img src="img/caro3.jpg" style="width:100%">
-                <div class="text">Caption Three</div>
             </div>
 
             <div class="mySlides fade">
                 <div class=>4 / 4</div>
                 <img src="img/caro4.jpg" style="width:100%">
-                <div class="text">Caption Three</div>
             </div>
 
 
@@ -107,12 +103,12 @@
     <div class="row gy-3">
         {%  for value in pizza %}
             <div class="col-4">
-                <div class="card" style="width: 18rem;">
+                <div class="card text-white bg-dark" style="width: 18rem;">
                     <img src="img/{{ value }}.jpg" class="card-img-top" alt="{{ value }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ value }}</h5>
                         <p class="card-text">{{ value }}</p>
-                        <a href="menu" class="btn btn-primary">Go somewhere</a>
+                        <a href="menu" class="btn btn-text-white bg-dark">Take me to the menu!</a>
                     </div>
                 </div>
             </div>
@@ -127,14 +123,13 @@
                         <div class="row">
                             <div class="col-md-6 ">
                                 <div class="logo-part">
-                                    <img src="https://i.ibb.co/sHZz13b/logo.png" class="w-50 logo-footer" >
-                                    <p>7637 Laurel Dr. King Of Prussia, PA 19406</p>
-                                    <p>Use this tool as test data for an automated system or find your next pen</p>
+                                    <img src="img/logo.png" class="w-50 logo-footer" >
+                                    <p>Roode Steen 12, 1621 CV Hoorn</p>
                                 </div>
                             </div>
                             <div class="col-md-6 px-4">
                                 <h6> About Company</h6>
-                                <p>But horizontal lines can only be a full pixel high.</p>
+                                <p>Pizzaria MK started as 1 kid with a dream of selling the worlds most delightful pizza's.</p>
                                 <a href="#" class="btn-footer"> More Info </a><br>
                                 <a href="#" class="btn-footer"> Contact Us</a>
                             </div>
@@ -149,15 +144,12 @@
                                         <ul>
                                             <li> <a href="#"> Home</a> </li>
                                             <li> <a href="#"> About</a> </li>
-                                            <li> <a href="#"> Service</a> </li>
-                                            <li> <a href="#"> Team</a> </li>
                                             <li> <a href="#"> Help</a> </li>
                                             <li> <a href="#"> Contact</a> </li>
                                         </ul>
                                     </div>
                                     <div class="col-md-6 px-4">
                                         <ul>
-                                            <li> <a href="#"> Cab Faciliy</a> </li>
                                             <li> <a href="#"> Fax</a> </li>
                                             <li> <a href="#"> Terms</a> </li>
                                             <li> <a href="#"> Policy</a> </li>
@@ -177,7 +169,6 @@
                                     <input type="text"  placeholder="search here...." name="search">
                                     <input type="button" value="Go" >
                                 </form>
-                                <p>That's technology limitation of LCD monitors</p>
                             </div>
                         </div>
                     </div>
