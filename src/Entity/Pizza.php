@@ -40,7 +40,7 @@ class Pizza
     private $sizes;
 
     /**
-     * @ORM\ManyToOne(targetEntity=category::class, inversedBy="pizzas")
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="pizzas")
      */
     private $category;
 

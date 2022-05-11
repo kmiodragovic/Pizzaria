@@ -7,7 +7,7 @@
 
 
 <style>.jumbotron{
-        background-image: url("../img/banner2.jpg");
+        background-image: url("../img/banner.jpg");
         height: 250px;
         background-position: center;
         background-repeat: no-repeat;
@@ -24,13 +24,13 @@
 <div class="container">
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link text-white bg-dark" href="/">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="menu">Pizza's</a>
+            <a class="nav-link active text-white bg-dark" aria-current="page" href="menu">Pizza's</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="contact">Contact</a>
+            <a class="nav-link text-white bg-dark" href="contact">Contact</a>
         </li>
     </ul>
 </div>
@@ -38,12 +38,11 @@
 <div class="row gy-3">
     {%  for choice in pizzas %}
         <div class="col-4">
-            <div class="card" style="width: 18rem;">
-                <img src="img/{{ choice }}.jpg" class="card-img-top" alt="{{ choice }}">
+            <div class="card text-white bg-dark" style="width: 18rem;">
+                <img src="/img/{{ choice.image }}" class="card-img-top" alt="{{ choice.name }}">
                 <div class="card-body">
-                    <h5 class="card-title">{{ choice }}</h5>
-                    <p class="card-text">{{ choice }}</p>
-                    <a href="menu" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">{{ choice.name }}</h5>
+                    <a href="menu" class="btn btn-text-white bg-dark">Go somewhere</a>
                 </div>
             </div>
         </div>

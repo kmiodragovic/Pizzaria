@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 11 mei 2022 om 12:52
--- Serverversie: 10.4.22-MariaDB
--- PHP-versie: 7.4.27
+-- Gegenereerd op: 11 mei 2022 om 14:59
+-- Serverversie: 10.4.21-MariaDB
+-- PHP-versie: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -59,14 +59,14 @@ CREATE TABLE `doctrine_migration_versions` (
 --
 
 INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
-('DoctrineMigrations\\Version20220413073032', '2022-04-13 09:30:38', 54),
-('DoctrineMigrations\\Version20220413073127', '2022-04-13 09:31:32', 53),
-('DoctrineMigrations\\Version20220413073452', '2022-04-13 09:34:59', 55),
-('DoctrineMigrations\\Version20220413075716', '2022-04-13 09:57:26', 160),
-('DoctrineMigrations\\Version20220413080045', '2022-04-13 10:00:48', 156),
-('DoctrineMigrations\\Version20220413080230', '2022-04-13 10:02:35', 62),
-('DoctrineMigrations\\Version20220413080718', '2022-04-13 10:07:23', 161),
-('DoctrineMigrations\\Version20220511101924', '2022-05-11 12:19:34', 310);
+('DoctrineMigrations\\Version20220413073032', '2022-05-11 14:27:44', 32),
+('DoctrineMigrations\\Version20220413073127', '2022-05-11 14:27:44', 13),
+('DoctrineMigrations\\Version20220413073452', '2022-05-11 14:27:44', 12),
+('DoctrineMigrations\\Version20220413075716', '2022-05-11 14:27:44', 47),
+('DoctrineMigrations\\Version20220413080045', '2022-05-11 14:27:45', 41),
+('DoctrineMigrations\\Version20220413080230', '2022-05-11 14:27:45', 13),
+('DoctrineMigrations\\Version20220413080718', '2022-05-11 14:27:45', 33),
+('DoctrineMigrations\\Version20220511101924', '2022-05-11 14:27:45', 39);
 
 -- --------------------------------------------------------
 
@@ -80,7 +80,7 @@ CREATE TABLE `order` (
   `sname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `adress` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `city` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `zipcode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `zipcode` varchar(6) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `pizza_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -103,9 +103,9 @@ CREATE TABLE `pizza` (
 --
 
 INSERT INTO `pizza` (`id`, `name`, `image`, `category_id`) VALUES
-(7, 'Pepperoni', 'Pepperoni1.jpg', 1),
-(8, 'Margherita', 'Margherita1.jpg', 2),
-(9, 'Tonno', 'Tun.jpg', 3);
+(1, 'Pepperoni Deluxe', 'Pepperoni1.jpg', 1),
+(2, 'Margherita', 'Margherita1.jpg', 2),
+(3, 'Tonno', 'Tun.jpg', 3);
 
 -- --------------------------------------------------------
 
@@ -176,7 +176,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT voor een tabel `pizza`
 --
 ALTER TABLE `pizza`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT voor een tabel `size`

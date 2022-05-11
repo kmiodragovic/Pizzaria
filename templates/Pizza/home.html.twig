@@ -29,7 +29,7 @@
                 <a class="nav-link active text-white bg-dark" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white bg-dark" href="menu">Pizza's</a>
+                <a class="nav-link text-white bg-dark" href="categories">Pizza's</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white bg-dark" href="contact">Contact</a>
@@ -108,7 +108,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ value }}</h5>
                         <p class="card-text">{{ value }}</p>
-                        <a href="menu" class="btn btn-text-white bg-dark">Take me to the menu!</a>
+                        <a href="/categories/{{ loop.index }}" class="btn btn-text-white bg-dark">Take me to the menu!</a>
                     </div>
                 </div>
             </div>

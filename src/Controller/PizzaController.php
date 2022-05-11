@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
+use App\Repository\PizzaRepository;
 use         Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -34,13 +36,25 @@ class PizzaController extends AbstractController
     }
 
     /**
-     * @Route("/menu")
+     * @Route("/categories/{id}")
      */
-    public function menu(): Response
+    public function menu(Category $category): Response
     {
-        return $this->render('Pizza/menu.html.twig', []);
 
+        return $this->render('Pizza/menu.html.twig', [
+            "pizzas" => $category->getPizzas()
+        ]);
+    }
 
+    /**
+     * @Route("/categories")
+     */
+    public function allpizzas(PizzaRepository $pizzaRepository): Response
+    {
+
+        return $this->render('Pizza/menu.html.twig', [
+            "pizzas" => $pizzaRepository->findAll()
+        ]);
     }
 
 
