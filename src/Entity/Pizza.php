@@ -49,6 +49,11 @@ class Pizza
      */
     private $sizes;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $category;
+
     public function __construct()
     {
         $this->pizzas = new ArrayCollection();
@@ -202,6 +207,18 @@ class Pizza
                 $size->setPizza(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(string $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
