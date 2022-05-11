@@ -30,19 +30,9 @@ class Pizza
     private $image;
 
     /**
-     * @ORM\OneToMany(targetEntity=Pizza::class, mappedBy="pizza")
-     */
-    private $pizzas;
-
-    /**
      * @ORM\OneToMany(targetEntity=Order::class, mappedBy="pizza")
      */
     private $orders;
-
-    /**
-     * @ORM\OneToMany(targetEntity=Category::class, mappedBy="pizza")
-     */
-    private $categories;
 
     /**
      * @ORM\OneToMany(targetEntity=Size::class, mappedBy="pizza")
@@ -50,15 +40,14 @@ class Pizza
     private $sizes;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity=category::class, inversedBy="pizzas")
      */
     private $category;
 
+
     public function __construct()
     {
-        $this->pizzas = new ArrayCollection();
         $this->orders = new ArrayCollection();
-        $this->categories = new ArrayCollection();
         $this->sizes = new ArrayCollection();
     }
 
@@ -92,36 +81,6 @@ class Pizza
     }
 
     /**
-     * @return Collection<int, Pizza>
-     */
-    public function getPizzas(): Collection
-    {
-        return $this->pizzas;
-    }
-
-    public function addPizza(Pizza $pizza): self
-    {
-        if (!$this->pizzas->contains($pizza)) {
-            $this->pizzas[] = $pizza;
-            $pizza->setPizza($this);
-        }
-
-        return $this;
-    }
-
-    public function removePizza(Pizza $pizza): self
-    {
-        if ($this->pizzas->removeElement($pizza)) {
-            // set the owning side to null (unless already changed)
-            if ($pizza->getPizza() === $this) {
-                $pizza->setPizza(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
      * @return Collection<int, Order>
      */
     public function getOrders(): Collection
@@ -145,36 +104,6 @@ class Pizza
             // set the owning side to null (unless already changed)
             if ($order->getPizza() === $this) {
                 $order->setPizza(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Category>
-     */
-    public function getCategories(): Collection
-    {
-        return $this->categories;
-    }
-
-    public function addCategory(Category $category): self
-    {
-        if (!$this->categories->contains($category)) {
-            $this->categories[] = $category;
-            $category->setPizza($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCategory(Category $category): self
-    {
-        if ($this->categories->removeElement($category)) {
-            // set the owning side to null (unless already changed)
-            if ($category->getPizza() === $this) {
-                $category->setPizza(null);
             }
         }
 
@@ -211,12 +140,12 @@ class Pizza
         return $this;
     }
 
-    public function getCategory(): ?string
+    public function getCategory(): ?category
     {
         return $this->category;
     }
 
-    public function setCategory(string $category): self
+    public function setCategory(?category $category): self
     {
         $this->category = $category;
 
