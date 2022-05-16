@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 11 mei 2022 om 14:59
--- Serverversie: 10.4.21-MariaDB
--- PHP-versie: 8.0.10
+-- Gegenereerd op: 16 mei 2022 om 11:06
+-- Serverversie: 10.4.22-MariaDB
+-- PHP-versie: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -105,7 +105,11 @@ CREATE TABLE `pizza` (
 INSERT INTO `pizza` (`id`, `name`, `image`, `category_id`) VALUES
 (1, 'Pepperoni Deluxe', 'Pepperoni1.jpg', 1),
 (2, 'Margherita', 'Margherita1.jpg', 2),
-(3, 'Tonno', 'Tun.jpg', 3);
+(3, 'Tonno', 'Tun.jpg', 3),
+(4, 'Vegeroni', 'pizza vegeroni.jpg', 2),
+(5, 'Salami', 'pizza salami.jpg', 1),
+(6, 'Caprese', 'pizza caprese.jpg', 2),
+(7, 'Carbonara', 'pizza carbonara.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -176,7 +180,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT voor een tabel `pizza`
 --
 ALTER TABLE `pizza`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT voor een tabel `size`
